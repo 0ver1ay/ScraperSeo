@@ -1,0 +1,52 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/128.png",
+         "32": "icons/32.png"
+      },
+      "default_popup": "popup/analiz/popup.html",
+      "default_title": "SEO анализ сайта от Be1.ru"
+   },
+   "background": {
+      "service_worker": "background/service.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "js": [ "/vendor/inject.js" ],
+      "matches": [ "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "content/be1_helper/script.js" ],
+      "matches": [ "*://be1.ru/*" ]
+   }, {
+      "css": [ "content/wordstat_assistant/style.css" ],
+      "js": [ "vendor/jquery-3.4.1.js", "common/functions.js", "content/wordstat_assistant/script.js" ],
+      "matches": [ "*://wordstat.yandex.ru/*", "*://wordstat.yandex.com/*", "*://wordstat.yandex.ua/*", "*://wordstat.yandex.by/*", "*://wordstat.yandex.kz/*", "*://wordstat.yandex.com.tr/*", "*://www.wordstat.yandex.ru/*", "*://www.wordstat.yandex.com/*", "*://www.wordstat.yandex.ua/*", "*://www.wordstat.yandex.by/*", "*://www.wordstat.yandex.kz/*" ]
+   }, {
+      "all_frames": true,
+      "js": [ "content/similarweb/script.js" ],
+      "matches": [ "https://www.similarweb.com/website/*", "https://www.similarweb.com/error/notfound" ],
+      "run_at": "document_idle"
+   } ],
+   "cross_origin_embedder_policy": {
+      "value": "require-corp"
+   },
+   "cross_origin_opener_policy": {
+      "value": "same-origin"
+   },
+   "description": "Анализ сайта, поможет проверить состояние важных показателей, от которых зависят позиции ресурса в выдаче поисковых систем.",
+   "homepage_url": "https://be1.ru/",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "icons/128.png",
+      "32": "icons/32.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzvhBNreJ8uvSALFo/Q+DLzc8orInxmlmqLh7990t9mf3bGTfQ2gwiRdMd4NkPIwU/gaqOKOCGrMgrsGXDRXkwmxWc0j9/ItxybOwfZswlQXiSMoo8IhC8Dir2McF+BpViwVzObgSogPiYoYxJ9dDsBJsQX1nmhykNPf+AG9vlGEG+9308MvrkhcMjvl7qXIJ0FES04ASc3Xc0x+AdB51dJWl6n9kDFLRxsxYZbogrIJLCXIPA0HkICA19FfbK88B7uwsp2UiGV5/vuGS3wRM5uaiJv3P6+YanIF+jTJ8x3+4M17vuC/vajS8/yI9IfWx/M9N/cHCpFuwLv1kz/KJXwIDAQAB",
+   "manifest_version": 3,
+   "name": "SEO-анализ сайта от Be1.ru",
+   "options_page": "options/options.html",
+   "permissions": [ "tabs", "storage", "webRequest" ],
+   "short_name": "Be1.ru",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.9.25"
+}

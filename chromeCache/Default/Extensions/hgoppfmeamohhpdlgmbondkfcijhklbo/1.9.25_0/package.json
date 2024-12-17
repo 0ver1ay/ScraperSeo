@@ -1,0 +1,18 @@
+{
+    "title": "SEO-анализ сайта от Be1.ru",
+    "name": "Be1.ru",
+    "version": "1.9.25",
+    "description": "Анализ сайта, поможет проверить состояние важных показателей, от которых зависят позиции ресурса в выдаче поисковых систем.",
+    "main": "index.js",
+    "author": "Be1.ru Team",
+    "engines": {
+        "firefox": ">=38.0a1",
+        "fennec": ">=38.0a1"
+    },
+    "license": "MIT",
+    "keywords": [
+        "be1",
+        "seo",
+        "wordstat"
+    ]
+}

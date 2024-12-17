@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Расширение от Be1.ru: Настройки</title>
+
+    <link rel="stylesheet" href="/options/options.css">
+    <script src="/vendor/jquery-3.4.1.js"></script>
+    <script src="/common/functions.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="https://be1.ru" target="_blank">
+            <img src="/options/img/logo.png" height="40">
+        </a>
+    </header>
+
+    <br><br><br><br><br><br>
+
+    <div class="container" style="display: none;">
+
+        <form id="config-form">
+
+            <h2>Настройки расширения:</h2>
+
+            <div class="content">
+
+                <table class="config">
+                    <tr>
+                        <td>Показывать ИКС на иконке</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="iks_badge" id="iks_badge">
+                                <label for="iks_badge"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wordstat Assistant</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="wordstat_assistant" id="wordstat_assistant">
+                                <label for="wordstat_assistant"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="md-radio">
+                                <input id="ro1" type="radio" name="analyze" value="site">
+                                <label for="ro1">Анализировать сайт</label>
+                            </div>
+                            <div class="md-radio">
+                                <input id="ro2" type="radio" name="analyze" value="page">
+                                <label for="ro2">Анализировать страницу</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <h2>Букмарклеты:</h2>
+
+            <div class="content">
+
+                <table class="config">
+                    <tr>
+                        <td>Антиплагиат</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="antiplagiat" value="antiplagiat">
+                                <label for="antiplagiat"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PageSpeed</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="google_page_speed"
+                                    value="google_page_speed">
+                                <label for="google_page_speed"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Friendly</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="google_mobile_friendly"
+                                    value="google_mobile_friendly">
+                                <label for="google_mobile_friendly"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>robots.txt</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="robots_txt" value="robots_txt">
+                                <label for="robots_txt"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>sitemap.xml</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="sitemap_xml" value="sitemap_xml">
+                                <label for="sitemap_xml"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Поддомены сайта</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="poddomeni_saita"
+                                    value="poddomeni_saita">
+                                <label for="poddomeni_saita"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Тошнота страницы</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="vfacen" value="vfacen">
+                                <label for="vfacen"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Поиск по сайту</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="bookmarklets[]" id="yandex_site_search"
+                                    value="yandex_site_search">
+                                <label for="yandex_site_search"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <h2>Сообщество:</h2>
+
+            <div class="content">
+
+                <table class="config">
+                    <tr>
+                        <td>Помочь в сборе статистики</td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" name="share_statistic" id="share_statistic">
+                                <label for="share_statistic"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </form>
+
+        <h2>Есть вопросы/замечания? Дайте нам знать:</h2>
+
+        <div class="content">
+
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <form id="feedback-form">
+
+                            <input type="text" name="email" placeholder="Ваш email (не обязательно)...">
+
+                            <textarea name="text" rows="4"></textarea>
+
+                            <button>Отправить</button>
+
+                            <span class="result"></span>
+
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- SCRIPTS -->
+
+    <script src="/options/options.js"></script>
+</body>
+
+</html>
