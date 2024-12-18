@@ -73,16 +73,12 @@ def check_checkbox(driver):
         yandex_checkbox.click()
 """
 def change_dropdown_selection(driver, text):
-    # Find all dropdowns and then select the second one
     dropdowns = WebDriverWait(driver, 10).until(ec.presence_of_all_elements_located(
         (By.CSS_SELECTOR, ".btn-group.bootstrap-select .btn.dropdown-toggle.btn-default")))
     if len(dropdowns) < 2:
         raise Exception("Less than two dropdowns found on the page.")
-    # Click the second dropdown
     dropdowns[1].click()
-
-    # Select the option
-    # You may need to adjust the logic here if the options are also dynamic
+    
     option = WebDriverWait(driver, 10).until(
         ec.element_to_be_clickable((By.XPATH, f"//span[normalize-space(.)='{text}']")))
     option.click()
@@ -91,15 +87,12 @@ def change_dropdown_selection(driver, text):
 def input_url_and_submit(driver, strings):
     try:
         fill_out_form(driver, strings)
-
-        # Change the dropdown selection here
         change_dropdown_selection(driver, "Москва")
 
         submit_button = WebDriverWait(driver, 10).until(
             ec.element_to_be_clickable((By.CSS_SELECTOR, ".btn2#tool-form-btn")))
         submit_button.click()
 
-        # Wait for the table to appear with retries
         max_retries = 10
         retries = 0
         while retries < max_retries:
@@ -138,9 +131,6 @@ def move_downloaded_files():
 
 
 def main():
-    # Delete all files in the 'files' directory
-    # delete_files_in_directory("E:\\WORK\\Python\\SeoScraper\\files")
-
     driver = setup_driver()
     strings = read_csv_file('your_csv_file_1.csv')
     for i in range(0, len(strings), 100):
