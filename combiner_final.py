@@ -5,7 +5,6 @@ import os
 
 # Функция сортировки файлов в папке по первому столбцу
 def format_and_sort_csv(file_path):
-    # Read CSV into a list of lists
     with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         data = [row for row in reader]
