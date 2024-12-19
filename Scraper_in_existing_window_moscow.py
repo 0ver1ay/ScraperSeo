@@ -105,9 +105,8 @@ def input_url_and_submit(driver, strings):
                 if retries == max_retries:
                     print("Reloading the page...")
                     driver.refresh()
-                    # Refill the form after reloading
                     fill_out_form(driver, strings)
-                    retries = 0  # Reset the retry counter after reloading
+                    retries = 0 
         else:
             raise Exception("Failed to find the table after maximum retries.")
 
